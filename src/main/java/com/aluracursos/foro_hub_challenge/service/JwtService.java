@@ -31,7 +31,7 @@ public class JwtService {
         return generateToken(usuario.getEmail());
     }
 
-    // Cambiamos el nombre para que coincida con JwtAuthorizationFilter
+
     public String extractUsername(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())

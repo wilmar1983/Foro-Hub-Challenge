@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -28,7 +27,7 @@ public class Usuario implements UserDetails {
     @Setter
     private String contrasena;
 
-    // Constructor personalizado si usas un DTO llamado DatosRegistroUsuario
+    // Constructor personalizado para el DTO DatosRegistroUsuario
     public Usuario(DatosRegistroUsuario datos) {
         this.nombre = datos.nombre();
         this.email = datos.email();

@@ -49,11 +49,20 @@ Para ejecutar este proyecto, necesitas tener instalado:
 
 2.  **Configura la base de datos**
     * Crea una base de datos llamada `foro_hub` en tu servidor MySQL.
-    * Edita el archivo `src/main/resources/application.properties` con tus credenciales de base de datos.
-        ```properties
-        spring.datasource.url=jdbc:mysql://localhost:3306/foro_hub
-        spring.datasource.username=tu_usuario
-        spring.datasource.password=tu_contraseña
+    *  ## 🔑 Variables de Entorno
+* Este proyecto utiliza variables de entorno para gestionar credenciales de forma segura. Para que la aplicación funcione, debes configurar las siguientes variables en tu sistema operativo:
+
+      DB_USERNAME: El nombre de usuario para tu base de datos MySQL.
+      DB_PASSWORD: La contraseña para tu base de datos MySQL.
+      JWT_SECRET: Una clave secreta larga y segura para la firma de los tokens JWT.
+
+* Edita el archivo `src/main/resources/application.properties` con tus credenciales de base de datos.
+          
+  ```properties 
+          spring.datasource.url=jdbc:mysql://localhost:3306/foro_hub
+          $env:DB_USERNAME="tu_usuario"
+          $env:DB_PASSWORD="tu_contraseña"
+          $env:JWT_SECRET="tu_clave_secreta_aqui"
         ```
 
 3.  **Ejecuta la aplicación**
@@ -95,7 +104,7 @@ Puedes encontrar la documentación completa de la API en la siguiente URL despu�
 
 ### **## 🖼️ Capturas de Pantalla**
 
-Añade aquí las imágenes para ilustrar las funcionalidades o la estructura del proyecto.
+Imágenes para ilustrar las funcionalidades o la estructura del proyecto.
 
 ![Estructura del proyecto en el IDE](src/screenshots/estrucutura-del-proyecto.png)
 ![Ejemplo de endpoint Get en Insomnia](src/screenshots/insomia-get-topicos.png)

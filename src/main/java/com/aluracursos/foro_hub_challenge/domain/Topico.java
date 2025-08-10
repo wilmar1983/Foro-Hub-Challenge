@@ -2,13 +2,10 @@ package com.aluracursos.foro_hub_challenge.domain;
 
 import com.aluracursos.foro_hub_challenge.dto.DatosActualizarTopico;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.awt.*;
 import java.time.LocalDateTime;
 
 @Table(name = "topicos")
